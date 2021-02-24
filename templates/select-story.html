@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Madlibs</h1>
+    <form action="/game">
+        <select name="story_id" >
+            {% for story in stories %}
+            <option value="{{ story.code }}">
+                {{ story.title }}
+            </option>
+            {% endfor %}
+        </select>    
+        <input type="submit">
+    </form>
+</div>
+    
+{% endblock %}
